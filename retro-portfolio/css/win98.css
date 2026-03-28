@@ -1295,8 +1295,8 @@ p {
 
 /* Photo */
 .about-panel-photo {
-    width: 140px;
-    height: 140px;
+    width: 200px;
+    height: 200px;
     margin: 0 auto 12px;
     background: var(--win-silver);
     border: 3px solid;
