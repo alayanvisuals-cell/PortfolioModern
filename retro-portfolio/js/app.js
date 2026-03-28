@@ -601,80 +601,58 @@
 })();
 
 // ============================================
-// Background Music — YouTube IFrame API
+// Background Music — HTML5 Audio
 // ============================================
 (function () {
-    var bgPlayer = null;
-    var bgMusicReady = false;
+    var bgMusic = null;
     var bgMusicPlaying = false;
-    var currentVolume = 30;
 
-    // Called automatically by YouTube IFrame API when it's ready
-    window.onYouTubeIframeAPIReady = function () {
-        bgPlayer = new YT.Player('yt-player', {
-            videoId: 'B63R7G8aFh4',
-            playerVars: {
-                autoplay: 0,
-                loop: 1,
-                playlist: 'B63R7G8aFh4',
-                controls: 0,
-                showinfo: 0,
-                modestbranding: 1,
-                fs: 0,
-                rel: 0
-            },
-            events: {
-                onReady: function () {
-                    bgMusicReady = true;
-                    bgPlayer.setVolume(currentVolume);
-                },
-                onStateChange: function (e) {
-                    if (e.data === YT.PlayerState.ENDED) {
-                        bgPlayer.playVideo();
-                    }
-                }
-            }
-        });
-    };
+    function getAudio() {
+        if (!bgMusic) bgMusic = document.getElementById('bg-music');
+        return bgMusic;
+    }
 
     function updateMusicIcon(playing) {
         var btn = document.getElementById('music-toggle');
         if (btn) {
-            btn.textContent = playing ? '🔊' : '🔇';
+            btn.textContent = playing ? '\ud83d\udd0a' : '\ud83d\udd07';
             btn.title = playing ? 'Mute Music' : 'Unmute Music';
         }
     }
 
-    // Exposed globally so closeShowreel can call it
+    // Start music — called by closeShowreel
     window.startBgMusic = function () {
-        if (bgPlayer && bgMusicReady && !bgMusicPlaying) {
-            bgPlayer.playVideo();
+        var audio = getAudio();
+        if (!audio || bgMusicPlaying) return;
+        audio.volume = (document.getElementById('volume-slider') ? parseInt(document.getElementById('volume-slider').value) : 30) / 100;
+        audio.play().then(function () {
             bgMusicPlaying = true;
             updateMusicIcon(true);
-        }
+        }).catch(function () {
+            // Autoplay blocked — will try again on next interaction
+        });
     };
 
     // Toggle mute/unmute
     window.toggleBgMusic = function () {
-        if (!bgPlayer || !bgMusicReady) return;
+        var audio = getAudio();
+        if (!audio) return;
         if (bgMusicPlaying) {
-            bgPlayer.pauseVideo();
+            audio.pause();
             bgMusicPlaying = false;
             updateMusicIcon(false);
         } else {
-            bgPlayer.playVideo();
-            bgMusicPlaying = true;
-            updateMusicIcon(true);
+            audio.play().then(function () {
+                bgMusicPlaying = true;
+                updateMusicIcon(true);
+            }).catch(function () {});
         }
     };
 
     // Volume control
     window.setBgVolume = function (vol) {
-        currentVolume = vol;
-        if (bgPlayer && bgMusicReady) {
-            bgPlayer.setVolume(vol);
-        }
-        // Update icon based on volume
+        var audio = getAudio();
+        if (audio) audio.volume = vol / 100;
         if (vol === 0) {
             updateMusicIcon(false);
         } else if (bgMusicPlaying) {

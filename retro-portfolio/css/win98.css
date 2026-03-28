@@ -904,7 +904,7 @@ p {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    margin-bottom: 6px;
+    padding-bottom: 8px;
     z-index: 1001;
 }
 
