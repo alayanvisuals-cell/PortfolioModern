@@ -488,24 +488,24 @@
 
     // --- Showreel Auto-play ---
     function initShowreel() {
-        var video = document.getElementById('showreel-video');
-        if (video) {
-            video.play().catch(function() {});
-        }
+        const container = document.getElementById('showreel-video-container');
+        if (!container) return;
+        const showreelId = '16mcL3GFYQT9CBO4GILre_vOIRfv7hfHV';
+        const driveEmbedUrl = 'https://drive.google.com/file/d/' + showreelId + '/preview';
+        container.innerHTML = '<iframe src="' + driveEmbedUrl + '" ' +
+            'width="100%" height="100%" frameborder="0" allowfullscreen ' +
+            'allow="autoplay; encrypted-media" style="border:none;"></iframe>';
         updateTaskbarButtons();
     }
 
     function closeShowreel() {
-        var win = document.getElementById('window-showreel');
-        var video = document.getElementById('showreel-video');
+        const win = document.getElementById('window-showreel');
+        const container = document.getElementById('showreel-video-container');
         if (win) {
             win.classList.remove('active');
             win.classList.remove('minimized');
         }
-        if (video) {
-            video.pause();
-            video.currentTime = 0;
-        }
+        if (container) container.innerHTML = '';
         delete windowStates['showreel'];
         updateTaskbarButtons();
         playSound(350, 0.04);
