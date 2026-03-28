@@ -417,6 +417,9 @@
         title.textContent = item.title;
         modal.classList.add('active');
         playSound(880, 0.08);
+
+        // Fade out background music
+        if (window.fadeOutBgMusic) window.fadeOutBgMusic();
     }
 
     function closeModal() {
@@ -426,6 +429,9 @@
         videoContainer.innerHTML = '';
         modal.classList.remove('active');
         playSound(350, 0.04);
+
+        // Fade background music back in
+        if (window.fadeInBgMusic) window.fadeInBgMusic();
     }
 
     // --- Keyboard Shortcuts ---
@@ -624,7 +630,8 @@
     window.startBgMusic = function () {
         var audio = getAudio();
         if (!audio || bgMusicPlaying) return;
-        audio.volume = (document.getElementById('volume-slider') ? parseInt(document.getElementById('volume-slider').value) : 30) / 100;
+        userVolume = (document.getElementById('volume-slider') ? parseInt(document.getElementById('volume-slider').value) : 30) / 100;
+        audio.volume = userVolume;
         audio.play().then(function () {
             bgMusicPlaying = true;
             updateMusicIcon(true);
@@ -650,13 +657,54 @@
     };
 
     // Volume control
+    var userVolume = 0.3;
     window.setBgVolume = function (vol) {
+        userVolume = vol / 100;
         var audio = getAudio();
-        if (audio) audio.volume = vol / 100;
+        if (audio) audio.volume = userVolume;
         if (vol === 0) {
             updateMusicIcon(false);
         } else if (bgMusicPlaying) {
             updateMusicIcon(true);
         }
+    };
+
+    // Fade out over ~500ms
+    var fadeInterval = null;
+    window.fadeOutBgMusic = function () {
+        var audio = getAudio();
+        if (!audio || !bgMusicPlaying) return;
+        if (fadeInterval) clearInterval(fadeInterval);
+        var vol = audio.volume;
+        fadeInterval = setInterval(function () {
+            vol -= 0.02;
+            if (vol <= 0) {
+                vol = 0;
+                audio.volume = 0;
+                clearInterval(fadeInterval);
+                fadeInterval = null;
+            } else {
+                audio.volume = vol;
+            }
+        }, 20);
+    };
+
+    // Fade back in over ~500ms to user's chosen volume
+    window.fadeInBgMusic = function () {
+        var audio = getAudio();
+        if (!audio || !bgMusicPlaying) return;
+        if (fadeInterval) clearInterval(fadeInterval);
+        var vol = audio.volume;
+        var target = userVolume;
+        fadeInterval = setInterval(function () {
+            vol += 0.02;
+            if (vol >= target) {
+                audio.volume = target;
+                clearInterval(fadeInterval);
+                fadeInterval = null;
+            } else {
+                audio.volume = vol;
+            }
+        }, 20);
     };
 })();
