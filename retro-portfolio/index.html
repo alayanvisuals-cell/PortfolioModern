@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Video editor & motion graphics artist portfolio — Windows 98 style desktop experience">
+    <title>Portfolio — Windows 98</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+    <link rel="stylesheet" href="css/win98.css">
+</head>
+<body>
+
+    <!-- ===== Desktop ===== -->
+    <div id="desktop">
+        <div class="desktop-icons">
+            <div class="desktop-icon" id="icon-about" tabindex="0">
+                <div class="icon-image">👤</div>
+                <div class="icon-label">About Me</div>
+            </div>
+            <div class="desktop-icon" id="icon-commercial" tabindex="0">
+                <div class="icon-image">🎬</div>
+                <div class="icon-label">Commercial Work</div>
+            </div>
+            <div class="desktop-icon" id="icon-passion" tabindex="0">
+                <div class="icon-image">✨</div>
+                <div class="icon-label">Passion Projects</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== About Me Window ===== -->
+    <div class="window" id="window-about">
+        <div class="window-header">
+            <span class="window-icon">👤</span>
+            <span class="window-title">About Me</span>
+            <div class="window-buttons">
+                <button class="win-btn min-btn" onclick="minimizeWindow('about')" title="Minimize">_</button>
+                <button class="win-btn max-btn" onclick="maximizeWindow('about')" title="Maximize">□</button>
+                <button class="win-btn close-btn" onclick="closeWindow('about')" title="Close">×</button>
+            </div>
+        </div>
+        <div class="window-content">
+            <div class="profile-section">
+                <div class="profile-image">🎥</div>
+                <h1>About Me</h1>
+            </div>
+
+            <div class="bio">
+                <p>Hi! I'm a passionate video editor and motion graphics artist with 5+ years of experience creating stunning visual content for brands, agencies, and independent creators.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="skills-list">
+                <h3>Skills & Tools</h3>
+                <ul>
+                    <li>Adobe Premiere Pro</li>
+                    <li>After Effects</li>
+                    <li>DaVinci Resolve</li>
+                    <li>Motion Graphics</li>
+                    <li>Color Grading</li>
+                    <li>Visual Effects</li>
+                    <li>Animation</li>
+                    <li>Sound Design</li>
+                </ul>
+            </div>
+
+            <div class="contact-section">
+                <h3>Contact & Social</h3>
+                <p>📧 hello@example.com</p>
+                <div class="contact-links">
+                    <a href="#" class="contact-link">Twitter</a>
+                    <a href="#" class="contact-link">Instagram</a>
+                    <a href="#" class="contact-link">LinkedIn</a>
+                    <a href="#" class="contact-link">Behance</a>
+                </div>
+            </div>
+        </div>
+        <div class="window-statusbar">
+            <div class="statusbar-section">Ready</div>
+        </div>
+        <div class="window-resize-handle"></div>
+    </div>
+
+    <!-- ===== Commercial Work Window ===== -->
+    <div class="window" id="window-commercial">
+        <div class="window-header">
+            <span class="window-icon">🎬</span>
+            <span class="window-title">Commercial Work</span>
+            <div class="window-buttons">
+                <button class="win-btn min-btn" onclick="minimizeWindow('commercial')" title="Minimize">_</button>
+                <button class="win-btn max-btn" onclick="maximizeWindow('commercial')" title="Maximize">□</button>
+                <button class="win-btn close-btn" onclick="closeWindow('commercial')" title="Close">×</button>
+            </div>
+        </div>
+        <div class="window-content" id="commercial-content">
+            <!-- Populated dynamically by JS (folders → thumbnails) -->
+        </div>
+        <div class="window-statusbar">
+            <div class="statusbar-section">2 folders</div>
+        </div>
+        <div class="window-resize-handle"></div>
+    </div>
+
+    <!-- ===== Passion Projects Window ===== -->
+    <div class="window" id="window-passion">
+        <div class="window-header">
+            <span class="window-icon">✨</span>
+            <span class="window-title">Passion Projects</span>
+            <div class="window-buttons">
+                <button class="win-btn min-btn" onclick="minimizeWindow('passion')" title="Minimize">_</button>
+                <button class="win-btn max-btn" onclick="maximizeWindow('passion')" title="Maximize">□</button>
+                <button class="win-btn close-btn" onclick="closeWindow('passion')" title="Close">×</button>
+            </div>
+        </div>
+        <div class="window-content" id="passion-content">
+            <!-- Populated dynamically by JS (folders → thumbnails) -->
+        </div>
+        <div class="window-statusbar">
+            <div class="statusbar-section">2 folders</div>
+        </div>
+        <div class="window-resize-handle"></div>
+    </div>
+
+    <!-- ===== Video Modal ===== -->
+    <div class="modal" id="video-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="window-icon">🎥</span>
+                <span class="modal-title" id="modal-title">Video Player</span>
+                <button class="modal-close" onclick="closeModal()" title="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="video-player" id="modal-video-container">
+                    <!-- Google Drive iframe will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Sliding About-Me Panel ===== -->
+    <div class="about-panel-overlay" id="about-panel-overlay"></div>
+    <div class="about-panel-toggle" id="about-panel-toggle" title="About Me">
+        <span class="about-panel-toggle-text">👤 About Me</span>
+    </div>
+    <div class="about-panel" id="about-panel">
+        <div class="about-panel-header">
+            <span class="about-panel-title">About Me</span>
+            <button class="about-panel-close" onclick="document.getElementById('about-panel').classList.remove('open'); document.getElementById('about-panel-overlay').classList.remove('open');">×</button>
+        </div>
+        <div class="about-panel-body">
+            <div class="about-panel-photo">
+                <img src="assets/profile.png" alt="Profile Photo">
+            </div>
+            <h2 class="about-panel-name">Mono</h2>
+            <p class="about-panel-role">Video Editor & Motion Graphics Artist</p>
+            <div class="about-panel-divider"></div>
+            <p class="about-panel-bio">
+                Hi! I'm a passionate video editor and motion graphics artist with 5+ years of experience creating stunning visual content for brands, agencies, and independent creators. I specialize in dynamic edits, eye-catching motion graphics, and visual storytelling that leaves a lasting impression.
+            </p>
+            <div class="about-panel-divider"></div>
+            <div class="about-panel-skills">
+                <h3>Tools & Skills</h3>
+                <div class="about-panel-skill-tags">
+                    <span class="skill-tag">After Effects</span>
+                    <span class="skill-tag">Premiere Pro</span>
+                    <span class="skill-tag">DaVinci Resolve</span>
+                    <span class="skill-tag">Motion Graphics</span>
+                    <span class="skill-tag">Color Grading</span>
+                    <span class="skill-tag">Sound Design</span>
+                    <span class="skill-tag">Animation</span>
+                    <span class="skill-tag">VFX</span>
+                </div>
+            </div>
+            <div class="about-panel-divider"></div>
+            <div class="about-panel-contact">
+                <h3>Get in Touch</h3>
+                <a href="mailto:hello@example.com" class="contact-link">📧 Email</a>
+                <a href="#" class="contact-link">📸 Instagram</a>
+                <a href="#" class="contact-link">🐦 Twitter</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Start Menu ===== -->
+    <div class="start-menu" id="start-menu">
+        <div class="start-menu-sidebar">
+            <span class="start-menu-sidebar-text">Portfolio98</span>
+        </div>
+        <div class="start-menu-items">
+            <button class="start-menu-item" data-window="about">
+                <span class="menu-icon">👤</span>
+                <span class="menu-text">About Me</span>
+            </button>
+            <button class="start-menu-item" data-window="commercial">
+                <span class="menu-icon">🎬</span>
+                <span class="menu-text">Commercial Work</span>
+            </button>
+            <button class="start-menu-item" data-window="passion">
+                <span class="menu-icon">✨</span>
+                <span class="menu-text">Passion Projects</span>
+            </button>
+            <div class="start-menu-separator"></div>
+            <button class="start-menu-item" onclick="window.open('mailto:hello@example.com')">
+                <span class="menu-icon">📧</span>
+                <span class="menu-text">Contact</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== Taskbar ===== -->
+    <div class="taskbar">
+        <button class="start-button" id="start-button">
+            <span class="start-logo">🪟</span>
+            <span class="start-text">Start</span>
+        </button>
+        <div class="taskbar-divider"></div>
+        <div class="quick-launch">
+            <div class="quick-launch-btn" id="ql-about" title="About Me">👤</div>
+            <div class="quick-launch-btn" id="ql-commercial" title="Commercial Work">🎬</div>
+            <div class="quick-launch-btn" id="ql-passion" title="Passion Projects">✨</div>
+        </div>
+        <div class="taskbar-divider"></div>
+        <div class="taskbar-windows" id="taskbar-windows">
+            <!-- Populated dynamically -->
+        </div>
+        <div class="system-tray">
+            <span class="tray-icon">🔊</span>
+            <span class="tray-clock" id="tray-clock">00:00</span>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

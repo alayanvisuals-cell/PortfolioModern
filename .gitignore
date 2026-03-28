@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Video files (hosted on Google Drive)
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+
+# Nested git repos
+AlayanVisualsPortfolio/.git/
+retro-portfolio/.git/
