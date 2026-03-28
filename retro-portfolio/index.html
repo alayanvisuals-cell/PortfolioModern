@@ -123,7 +123,7 @@
     </div>
 
     <!-- ===== Showreel Window (auto-opens on load) ===== -->
-    <div class="window active" id="window-showreel" data-positioned="true" style="top:40px;left:180px;width:720px;height:480px;z-index:11;">
+    <div class="window active" id="window-showreel" data-positioned="true" style="top:30px;left:120px;width:900px;height:560px;z-index:11;">
         <div class="window-header">
             <span class="window-icon">📺</span>
             <span class="window-title">Showreel — Now Playing</span>
@@ -135,7 +135,9 @@
         </div>
         <div class="modal-body" style="flex:1;margin:3px;">
             <div class="video-player" id="showreel-video-container">
-                <!-- Showreel iframe injected by JS on load -->
+                <video id="showreel-video" autoplay loop muted playsinline controls>
+                    <source src="assets/videos/Showreel sfx.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
         <div class="window-statusbar">

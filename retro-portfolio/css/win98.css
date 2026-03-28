@@ -709,6 +709,12 @@ p {
     border: none;
 }
 
+.video-player video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /* --- Taskbar --- */
 .taskbar {
     position: fixed;
