@@ -122,6 +122,28 @@
         <div class="window-resize-handle"></div>
     </div>
 
+    <!-- ===== Showreel Window (auto-opens on load) ===== -->
+    <div class="window active" id="window-showreel" data-positioned="true" style="top:40px;left:180px;width:720px;height:480px;z-index:11;">
+        <div class="window-header">
+            <span class="window-icon">📺</span>
+            <span class="window-title">Showreel — Now Playing</span>
+            <div class="window-buttons">
+                <button class="win-btn min-btn" onclick="minimizeWindow('showreel')" title="Minimize">_</button>
+                <button class="win-btn max-btn" onclick="maximizeWindow('showreel')" title="Maximize">□</button>
+                <button class="win-btn close-btn" onclick="closeShowreel()" title="Close">×</button>
+            </div>
+        </div>
+        <div class="modal-body" style="flex:1;margin:3px;">
+            <div class="video-player" id="showreel-video-container">
+                <!-- Showreel iframe injected by JS on load -->
+            </div>
+        </div>
+        <div class="window-statusbar">
+            <div class="statusbar-section">▶ Playing: 2025 Showreel</div>
+        </div>
+        <div class="window-resize-handle"></div>
+    </div>
+
     <!-- ===== Video Modal ===== -->
     <div class="modal" id="video-modal">
         <div class="modal-content">

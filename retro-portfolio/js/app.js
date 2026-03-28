@@ -198,6 +198,7 @@
         container.innerHTML = '';
 
         const windowConfigs = [
+            { id: 'showreel', icon: '📺', title: 'Showreel' },
             { id: 'about', icon: '👤', title: 'About Me' },
             { id: 'commercial', icon: '🎬', title: 'Commercial Work' },
             { id: 'passion', icon: '✨', title: 'Passion Projects' }
@@ -485,6 +486,31 @@
         if (overlay) overlay.classList.remove('open');
     }
 
+    // --- Showreel Auto-play ---
+    function initShowreel() {
+        const container = document.getElementById('showreel-video-container');
+        if (!container) return;
+        const showreelId = '16mcL3GFYQT9CBO4GILre_vOIRfv7hfHV';
+        const driveEmbedUrl = 'https://drive.google.com/file/d/' + showreelId + '/preview';
+        container.innerHTML = '<iframe src="' + driveEmbedUrl + '" ' +
+            'width="100%" height="100%" frameborder="0" allowfullscreen ' +
+            'allow="autoplay; encrypted-media" style="border:none;"></iframe>';
+        updateTaskbarButtons();
+    }
+
+    function closeShowreel() {
+        const win = document.getElementById('window-showreel');
+        const container = document.getElementById('showreel-video-container');
+        if (win) {
+            win.classList.remove('active');
+            win.classList.remove('minimized');
+        }
+        if (container) container.innerHTML = '';
+        delete windowStates['showreel'];
+        updateTaskbarButtons();
+        playSound(350, 0.04);
+    }
+
     // --- Init ---
     document.addEventListener('DOMContentLoaded', function () {
         // Clock
@@ -536,6 +562,9 @@
         // Close panel when clicking overlay
         var panelOverlay = document.getElementById('about-panel-overlay');
         if (panelOverlay) panelOverlay.addEventListener('click', closeAboutPanel);
+
+        // Auto-play showreel on load
+        initShowreel();
     });
 
     // Expose functions to HTML onclick handlers
@@ -544,5 +573,6 @@
     window.minimizeWindow = minimizeWindow;
     window.maximizeWindow = maximizeWindow;
     window.closeModal = closeModal;
+    window.closeShowreel = closeShowreel;
 
 })();
