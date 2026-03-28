@@ -875,6 +875,113 @@ p {
     cursor: default;
 }
 
+.system-tray .music-toggle {
+    cursor: pointer;
+    padding: 1px 3px;
+    border: 1px solid transparent;
+    user-select: none;
+}
+
+.system-tray .music-toggle:hover {
+    border: 1px solid;
+    border-color: var(--win-btn-highlight) var(--win-btn-shadow) var(--win-btn-shadow) var(--win-btn-highlight);
+}
+
+.system-tray .music-toggle:active {
+    border-color: var(--win-btn-shadow) var(--win-btn-highlight) var(--win-btn-highlight) var(--win-btn-shadow);
+}
+
+/* Volume control wrapper */
+.volume-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.volume-popup {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 6px;
+    z-index: 1001;
+}
+
+.volume-control:hover .volume-popup {
+    display: block;
+}
+
+.volume-popup-inner {
+    background: var(--win-silver);
+    border: 2px solid;
+    border-color: var(--win-btn-highlight) var(--win-btn-dark-shadow) var(--win-btn-dark-shadow) var(--win-btn-highlight);
+    box-shadow: inset 1px 1px 0 var(--win-highlight), inset -1px -1px 0 var(--win-btn-shadow),
+                2px 2px 0 rgba(0,0,0,0.2);
+    padding: 10px 8px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Vertical range slider — Win98 style */
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    writing-mode: vertical-lr;
+    direction: rtl;
+    width: 22px;
+    height: 100px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-runnable-track {
+    width: 6px;
+    background: var(--win-content-bg);
+    border: 2px solid;
+    border-color: var(--win-btn-shadow) var(--win-btn-highlight) var(--win-btn-highlight) var(--win-btn-shadow);
+    box-shadow: inset 1px 1px 0 var(--win-dark-shadow);
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 10px;
+    background: var(--win-btn-face);
+    border: 2px solid;
+    border-color: var(--win-btn-highlight) var(--win-btn-dark-shadow) var(--win-btn-dark-shadow) var(--win-btn-highlight);
+    box-shadow: inset 1px 1px 0 var(--win-highlight);
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-track {
+    width: 6px;
+    background: var(--win-content-bg);
+    border: 2px solid;
+    border-color: var(--win-btn-shadow) var(--win-btn-highlight) var(--win-btn-highlight) var(--win-btn-shadow);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 14px;
+    height: 10px;
+    background: var(--win-btn-face);
+    border: 2px solid;
+    border-color: var(--win-btn-highlight) var(--win-btn-dark-shadow) var(--win-btn-dark-shadow) var(--win-btn-highlight);
+    box-shadow: inset 1px 1px 0 var(--win-highlight);
+    cursor: pointer;
+    border-radius: 0;
+}
+
+.volume-label {
+    font-family: var(--win-font);
+    font-size: 11px;
+    color: var(--win-black);
+    text-align: center;
+}
+
 .system-tray .tray-clock {
     font-family: var(--win-font);
     font-size: 13px;
