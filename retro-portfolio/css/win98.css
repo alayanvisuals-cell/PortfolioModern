@@ -47,10 +47,64 @@ html, body {
 
 body {
     background-color: var(--win-bg);
+    background-image: url('../assets/icons/Windows%20light%202%2016x9.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: var(--win-font);
     font-size: 16px;
     color: var(--win-black);
     user-select: none;
+}
+
+body.dark-mode {
+    background-image: url('../assets/icons/Windows%20Night%2016x9.png');
+    --win-bg: #1a1a1a;
+    --win-silver: #2a2a2a;
+    --win-dark-silver: #1a1a1a;
+    --win-white: #f5f5f5;
+    --win-black: #e0e0e0;
+    --win-title-blue: #1c1c1c;
+    --win-title-blue-light: #383838;
+    --win-highlight: #555555;
+    --win-shadow: #1a1a1a;
+    --win-dark-shadow: #000000;
+    --win-btn-face: #383838;
+    --win-btn-highlight: #555555;
+    --win-btn-shadow: #1a1a1a;
+    --win-btn-dark-shadow: #000000;
+    --win-selection: #5c85d6;
+    --win-selection-text: #ffffff;
+    --win-window-bg: #383838;
+    --win-content-bg: #242424;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle {
+    position: fixed;
+    bottom: calc(var(--win-taskbar-height) + 20px);
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+    border-radius: 50%;
+    font-size: 28px;
+    cursor: pointer;
+    background: var(--win-btn-face);
+    border: 3px solid;
+    border-color: var(--win-btn-highlight) var(--win-btn-dark-shadow) var(--win-btn-dark-shadow) var(--win-btn-highlight);
+    box-shadow: inset 2px 2px 0 var(--win-highlight), inset -2px -2px 0 var(--win-btn-shadow), 4px 4px 8px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s;
+}
+
+.theme-toggle:active {
+    border-color: var(--win-btn-dark-shadow) var(--win-btn-highlight) var(--win-btn-highlight) var(--win-btn-dark-shadow);
+    box-shadow: inset 2px 2px 0 var(--win-btn-shadow), inset -2px -2px 0 var(--win-highlight);
+    padding-top: 4px;
+    padding-left: 4px;
 }
 
 /* --- 3D Border Utilities --- */
@@ -1667,4 +1721,31 @@ p {
         right: 0;
     }
 
+}
+
+/* --- Global Loading Screen --- */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+    pointer-events: all;
+}
+
+#loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#loader-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

@@ -199,9 +199,9 @@
 
         const windowConfigs = [
             { id: 'showreel', icon: '📺', title: 'Showreel' },
-            { id: 'about', icon: '👤', title: 'About Me' },
-            { id: 'commercial', icon: '🎬', title: 'Commercial Work' },
-            { id: 'passion', icon: '✨', title: 'Passion Projects' }
+            { id: 'about', icon: '<img src="assets/icons/About me.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt="">', title: 'About Me' },
+            { id: 'commercial', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Commercial Work' },
+            { id: 'passion', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Passion Projects' }
         ];
 
         windowConfigs.forEach(cfg => {
@@ -366,7 +366,7 @@
     function createFolderIcon(name, onOpen) {
         var div = document.createElement('div');
         div.className = 'folder-icon';
-        div.innerHTML = '<div class="folder-icon-img">📁</div>' +
+        div.innerHTML = '<div class="folder-icon-img"><img src="assets/icons/folder icon.png" style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>' +
             '<div class="folder-icon-label">' + name + '</div>';
         // Single click to open
         div.addEventListener('click', function (e) {
@@ -522,6 +522,25 @@
 
     // --- Init ---
     document.addEventListener('DOMContentLoaded', function () {
+        // Global Loader
+        var loader = document.getElementById('loader');
+        var loaderVideo = document.getElementById('loader-video');
+        if (loader && loaderVideo) {
+            var hideLoader = function() {
+                loader.classList.add('hidden');
+                setTimeout(function() { loader.style.display = 'none'; }, 500);
+            };
+            loaderVideo.addEventListener('ended', hideLoader);
+            loaderVideo.addEventListener('error', hideLoader);
+            
+            var playPromise = loaderVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(function() {
+                    hideLoader();
+                });
+            }
+        }
+
         // Clock
         updateClock();
         setInterval(updateClock, 10000);
@@ -594,6 +613,32 @@
                 if (window.setBgVolume) window.setBgVolume(vol);
             });
         }
+
+        // Theme Toggle
+        var themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            var currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.innerHTML = '🌙';
+            } else {
+                themeToggle.innerHTML = '🌞';
+            }
+
+            themeToggle.addEventListener('click', function() {
+                document.body.classList.toggle('dark-mode');
+                var isDark = document.body.classList.contains('dark-mode');
+                
+                if (isDark) {
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.innerHTML = '🌙';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.innerHTML = '🌞';
+                }
+                if (typeof playSound !== 'undefined') playSound(600, 0.05);
+            });
+        }
     });
 
     // Expose functions to HTML onclick handlers
@@ -621,8 +666,11 @@
     function updateMusicIcon(playing) {
         var btn = document.getElementById('music-toggle');
         if (btn) {
-            btn.textContent = playing ? '\ud83d\udd0a' : '\ud83d\udd07';
             btn.title = playing ? 'Mute Music' : 'Unmute Music';
+            var img = btn.querySelector('img');
+            if (img) {
+                img.style.opacity = playing ? '1' : '0.5';
+            }
         }
     }
 

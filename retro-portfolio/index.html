@@ -10,19 +10,31 @@
 </head>
 <body>
 
+    <!-- ===== Global Loading Screen ===== -->
+    <div id="loader">
+        <video id="loader-video" autoplay muted playsinline>
+            <source src="assets/videos/Loading screen porfolio.webm" type="video/webm">
+        </video>
+    </div>
+
+    <!-- ===== Theme Toggle Button ===== -->
+    <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+        🌞
+    </button>
+
     <!-- ===== Desktop ===== -->
     <div id="desktop">
         <div class="desktop-icons">
             <div class="desktop-icon" id="icon-about" tabindex="0">
-                <div class="icon-image">👤</div>
+                <div class="icon-image"><img src="assets/icons/About me.png" style="width:100%; height:100%; object-fit:contain; transform: scale(1.5);" alt="About Me"></div>
                 <div class="icon-label">About Me</div>
             </div>
             <div class="desktop-icon" id="icon-commercial" tabindex="0">
-                <div class="icon-image">🎬</div>
+                <div class="icon-image"><img src="assets/icons/folder icon.png" style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>
                 <div class="icon-label">Commercial Work</div>
             </div>
             <div class="desktop-icon" id="icon-passion" tabindex="0">
-                <div class="icon-image">✨</div>
+                <div class="icon-image"><img src="assets/icons/folder icon.png" style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>
                 <div class="icon-label">Passion Projects</div>
             </div>
         </div>
@@ -31,7 +43,7 @@
     <!-- ===== About Me Window ===== -->
     <div class="window" id="window-about">
         <div class="window-header">
-            <span class="window-icon">👤</span>
+            <span class="window-icon"><img src="assets/icons/About me.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt=""></span>
             <span class="window-title">About Me</span>
             <div class="window-buttons">
                 <button class="win-btn min-btn" onclick="minimizeWindow('about')" title="Minimize">_</button>
@@ -84,7 +96,7 @@
     <!-- ===== Commercial Work Window ===== -->
     <div class="window" id="window-commercial">
         <div class="window-header">
-            <span class="window-icon">🎬</span>
+            <span class="window-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
             <span class="window-title">Commercial Work</span>
             <div class="window-buttons">
                 <button class="win-btn min-btn" onclick="minimizeWindow('commercial')" title="Minimize">_</button>
@@ -104,7 +116,7 @@
     <!-- ===== Passion Projects Window ===== -->
     <div class="window" id="window-passion">
         <div class="window-header">
-            <span class="window-icon">✨</span>
+            <span class="window-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
             <span class="window-title">Passion Projects</span>
             <div class="window-buttons">
                 <button class="win-btn min-btn" onclick="minimizeWindow('passion')" title="Minimize">_</button>
@@ -162,7 +174,7 @@
     <!-- ===== Sliding About-Me Panel ===== -->
     <div class="about-panel-overlay" id="about-panel-overlay"></div>
     <div class="about-panel-toggle" id="about-panel-toggle" title="About Me">
-        <span class="about-panel-toggle-text">👤 About Me</span>
+        <span class="about-panel-toggle-text"><img src="assets/icons/About me.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt=""> About Me</span>
     </div>
     <div class="about-panel" id="about-panel">
         <div class="about-panel-header">
@@ -211,15 +223,15 @@
         </div>
         <div class="start-menu-items">
             <button class="start-menu-item" data-window="about">
-                <span class="menu-icon">👤</span>
+                <span class="menu-icon"><img src="assets/icons/About me.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt=""></span>
                 <span class="menu-text">About Me</span>
             </button>
             <button class="start-menu-item" data-window="commercial">
-                <span class="menu-icon">🎬</span>
+                <span class="menu-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
                 <span class="menu-text">Commercial Work</span>
             </button>
             <button class="start-menu-item" data-window="passion">
-                <span class="menu-icon">✨</span>
+                <span class="menu-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
                 <span class="menu-text">Passion Projects</span>
             </button>
             <div class="start-menu-separator"></div>
@@ -238,9 +250,9 @@
         </button>
         <div class="taskbar-divider"></div>
         <div class="quick-launch">
-            <div class="quick-launch-btn" id="ql-about" title="About Me">👤</div>
-            <div class="quick-launch-btn" id="ql-commercial" title="Commercial Work">🎬</div>
-            <div class="quick-launch-btn" id="ql-passion" title="Passion Projects">✨</div>
+            <div class="quick-launch-btn" id="ql-about" title="About Me"><img src="assets/icons/About me.png" style="width:1.2em; height:1.2em; object-fit:contain; transform: scale(1.5);" alt=""></div>
+            <div class="quick-launch-btn" id="ql-commercial" title="Commercial Work"><img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; object-fit:contain;" alt=""></div>
+            <div class="quick-launch-btn" id="ql-passion" title="Passion Projects"><img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; object-fit:contain;" alt=""></div>
         </div>
         <div class="taskbar-divider"></div>
         <div class="taskbar-brand">Alayan Visuals</div>
@@ -250,7 +262,7 @@
         </div>
         <div class="system-tray">
             <div class="volume-control" id="volume-control">
-                <span class="tray-icon music-toggle" id="music-toggle" title="Toggle Music">🔊</span>
+                <span class="tray-icon music-toggle" id="music-toggle" title="Toggle Music"><img id="audio-icon-img" src="assets/icons/Audio.png" style="width:1.2em; height:1.2em; object-fit:contain; transition: opacity 0.2s;" alt=""></span>
                 <div class="volume-popup" id="volume-popup">
                     <div class="volume-popup-inner">
                         <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="30" orient="vertical">
