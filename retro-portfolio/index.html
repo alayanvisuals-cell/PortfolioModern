@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Video editor & motion graphics artist portfolio — Windows 98 style desktop experience">
-    <title>Portfolio — Windows 98</title>
+    <meta name="description"
+        content="Video editor & motion graphics artist portfolio — Windows 98 style desktop experience">
+    <title>Alayan Visuals</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
     <link rel="stylesheet" href="css/win98.css">
 </head>
+
 <body>
 
     <!-- ===== Global Loading Screen ===== -->
@@ -26,16 +29,25 @@
     <div id="desktop">
         <div class="desktop-icons">
             <div class="desktop-icon" id="icon-about" tabindex="0">
-                <div class="icon-image"><img src="assets/icons/About me.png" style="width:100%; height:100%; object-fit:contain; transform: scale(1.5);" alt="About Me"></div>
+                <div class="icon-image"><img src="assets/icons/About me.png"
+                        style="width:100%; height:100%; object-fit:contain; transform: scale(1.5);" alt="About Me">
+                </div>
                 <div class="icon-label">About Me</div>
             </div>
             <div class="desktop-icon" id="icon-commercial" tabindex="0">
-                <div class="icon-image"><img src="assets/icons/folder icon.png" style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>
+                <div class="icon-image"><img src="assets/icons/folder icon.png"
+                        style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>
                 <div class="icon-label">Commercial Work</div>
             </div>
             <div class="desktop-icon" id="icon-passion" tabindex="0">
-                <div class="icon-image"><img src="assets/icons/folder icon.png" style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>
+                <div class="icon-image"><img src="assets/icons/folder icon.png"
+                        style="width:100%; height:100%; object-fit:contain;" alt="Folder"></div>
                 <div class="icon-label">Passion Projects</div>
+            </div>
+            <div class="desktop-icon" id="icon-resume" tabindex="0">
+                <div class="icon-image"><img src="assets/icons/pdf-icon.svg"
+                        style="width:100%; height:100%; object-fit:contain;" alt="PDF Document"></div>
+                <div class="icon-label">Resume.pdf</div>
             </div>
         </div>
     </div>
@@ -43,7 +55,9 @@
     <!-- ===== About Me Window ===== -->
     <div class="window" id="window-about">
         <div class="window-header">
-            <span class="window-icon"><img src="assets/icons/About me.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt=""></span>
+            <span class="window-icon"><img src="assets/icons/About me.png"
+                    style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);"
+                    alt=""></span>
             <span class="window-title">About Me</span>
             <div class="window-buttons">
                 <button class="win-btn min-btn" onclick="minimizeWindow('about')" title="Minimize">_</button>
@@ -53,12 +67,14 @@
         </div>
         <div class="window-content">
             <div class="profile-section">
-                <div class="profile-image" style="width: 150px; height: 150px;"><img src="assets/icons/PFP.jpg" alt="Profile Photo"></div>
+                <div class="profile-image" style="width: 150px; height: 150px;"><img src="assets/icons/PFP.jpg"
+                        alt="Profile Photo"></div>
                 <h1>Moayad Alayan</h1>
             </div>
 
             <div class="bio">
-                <p>Self-taught video editor & motion designer, age 22, based in Amman, Jordan. Creating motion-driven visuals with a focus on style, storytelling, and precision.</p>
+                <p>Self-taught video editor & motion designer, age 22, based in Amman, Jordan. Creating motion-driven
+                    visuals with a focus on style, storytelling, and precision.</p>
             </div>
 
             <div class="divider"></div>
@@ -82,7 +98,8 @@
                 <p style="margin-bottom: 4px;">📧 alayanvisuals@gmail.com</p>
                 <p style="margin-bottom: 12px;">📱 +962778098713 (WhatsApp)</p>
                 <div class="contact-links">
-                    <a href="https://www.instagram.com/alayan.visuals/" target="_blank" class="contact-link">Instagram</a>
+                    <a href="https://www.instagram.com/alayan.visuals/" target="_blank"
+                        class="contact-link">Instagram</a>
                     <a href="https://www.linkedin.com/in/moayadalayan" target="_blank" class="contact-link">LinkedIn</a>
                 </div>
             </div>
@@ -96,7 +113,8 @@
     <!-- ===== Commercial Work Window ===== -->
     <div class="window" id="window-commercial">
         <div class="window-header">
-            <span class="window-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
+            <span class="window-icon"><img src="assets/icons/folder icon.png"
+                    style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
             <span class="window-title">Commercial Work</span>
             <div class="window-buttons">
                 <button class="win-btn min-btn" onclick="minimizeWindow('commercial')" title="Minimize">_</button>
@@ -116,7 +134,8 @@
     <!-- ===== Passion Projects Window ===== -->
     <div class="window" id="window-passion">
         <div class="window-header">
-            <span class="window-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
+            <span class="window-icon"><img src="assets/icons/folder icon.png"
+                    style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
             <span class="window-title">Passion Projects</span>
             <div class="window-buttons">
                 <button class="win-btn min-btn" onclick="minimizeWindow('passion')" title="Minimize">_</button>
@@ -133,8 +152,26 @@
         <div class="window-resize-handle"></div>
     </div>
 
+    <!-- ===== Resume PDF Window ===== -->
+    <div class="window" id="window-resume" style="width: 800px; height: 600px; top: 60px; left: 180px;">
+        <div class="window-header">
+            <span class="window-icon"><img src="assets/icons/pdf-icon.svg" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
+            <span class="window-title">Moayad(Creative) Resume.pdf - Acrobat Reader</span>
+            <div class="window-buttons">
+                <button class="win-btn min-btn" onclick="minimizeWindow('resume')" title="Minimize">_</button>
+                <button class="win-btn max-btn" onclick="maximizeWindow('resume')" title="Maximize">□</button>
+                <button class="win-btn close-btn" onclick="closeWindow('resume')" title="Close">×</button>
+            </div>
+        </div>
+        <div class="window-content" style="padding: 0; overflow: hidden; background-color: #555;">
+            <iframe src="assets/Moayad(Creative)%20Resume.pdf" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+        <div class="window-resize-handle"></div>
+    </div>
+
     <!-- ===== Showreel Window (auto-opens on load) ===== -->
-    <div class="window active" id="window-showreel" data-positioned="true" style="top:30px;left:120px;width:900px;height:560px;z-index:11;">
+    <div class="window active" id="window-showreel" data-positioned="true"
+        style="top:30px;left:120px;width:900px;height:560px;z-index:11;">
         <div class="window-header">
             <span class="window-icon">📺</span>
             <span class="window-title">Showreel — Now Playing</span>
@@ -174,12 +211,15 @@
     <!-- ===== Sliding About-Me Panel ===== -->
     <div class="about-panel-overlay" id="about-panel-overlay"></div>
     <div class="about-panel-toggle" id="about-panel-toggle" title="About Me">
-        <span class="about-panel-toggle-text"><img src="assets/icons/About me.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt=""> About Me</span>
+        <span class="about-panel-toggle-text"><img src="assets/icons/About me.png"
+                style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);"
+                alt=""> About Me</span>
     </div>
     <div class="about-panel" id="about-panel">
         <div class="about-panel-header">
             <span class="about-panel-title">About Me</span>
-            <button class="about-panel-close" onclick="document.getElementById('about-panel').classList.remove('open'); document.getElementById('about-panel-overlay').classList.remove('open');">×</button>
+            <button class="about-panel-close"
+                onclick="document.getElementById('about-panel').classList.remove('open'); document.getElementById('about-panel-overlay').classList.remove('open');">×</button>
         </div>
         <div class="about-panel-body">
             <div class="about-panel-photo">
@@ -189,7 +229,8 @@
             <p class="about-panel-role">Video Editor & Motion Graphics Artist</p>
             <div class="about-panel-divider"></div>
             <p class="about-panel-bio">
-                Self-taught video editor & motion designer, age 22, based in Amman, Jordan. Creating motion-driven visuals with a focus on style, storytelling, and precision.
+                Self-taught video editor & motion designer, age 22, based in Amman, Jordan. Creating motion-driven
+                visuals with a focus on style, storytelling, and precision.
             </p>
             <div class="about-panel-divider"></div>
             <div class="about-panel-skills">
@@ -209,8 +250,10 @@
             <div class="about-panel-contact">
                 <h3>Get in Touch</h3>
                 <a href="mailto:alayanvisuals@gmail.com" class="contact-link">📧 Email</a>
-                <a href="https://wa.me/962778098713" target="_blank" class="contact-link">📱 +962778098713 (WhatsApp)</a>
-                <a href="https://www.instagram.com/alayan.visuals/" target="_blank" class="contact-link">📸 Instagram</a>
+                <a href="https://wa.me/962778098713" target="_blank" class="contact-link">📱 +962778098713
+                    (WhatsApp)</a>
+                <a href="https://www.instagram.com/alayan.visuals/" target="_blank" class="contact-link">📸
+                    Instagram</a>
                 <a href="https://www.linkedin.com/in/moayadalayan" target="_blank" class="contact-link">💼 LinkedIn</a>
             </div>
         </div>
@@ -223,15 +266,19 @@
         </div>
         <div class="start-menu-items">
             <button class="start-menu-item" data-window="about">
-                <span class="menu-icon"><img src="assets/icons/About me.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt=""></span>
+                <span class="menu-icon"><img src="assets/icons/About me.png"
+                        style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);"
+                        alt=""></span>
                 <span class="menu-text">About Me</span>
             </button>
             <button class="start-menu-item" data-window="commercial">
-                <span class="menu-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
+                <span class="menu-icon"><img src="assets/icons/folder icon.png"
+                        style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
                 <span class="menu-text">Commercial Work</span>
             </button>
             <button class="start-menu-item" data-window="passion">
-                <span class="menu-icon"><img src="assets/icons/folder icon.png" style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
+                <span class="menu-icon"><img src="assets/icons/folder icon.png"
+                        style="width:1em; height:1em; vertical-align:-0.15em; object-fit:contain;" alt=""></span>
                 <span class="menu-text">Passion Projects</span>
             </button>
             <div class="start-menu-separator"></div>
@@ -250,9 +297,14 @@
         </button>
         <div class="taskbar-divider"></div>
         <div class="quick-launch">
-            <div class="quick-launch-btn" id="ql-about" title="About Me"><img src="assets/icons/About me.png" style="width:1.2em; height:1.2em; object-fit:contain; transform: scale(1.5);" alt=""></div>
-            <div class="quick-launch-btn" id="ql-commercial" title="Commercial Work"><img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; object-fit:contain;" alt=""></div>
-            <div class="quick-launch-btn" id="ql-passion" title="Passion Projects"><img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; object-fit:contain;" alt=""></div>
+            <div class="quick-launch-btn" id="ql-about" title="About Me"><img src="assets/icons/About me.png"
+                    style="width:1.2em; height:1.2em; object-fit:contain; transform: scale(1.5);" alt=""></div>
+            <div class="quick-launch-btn" id="ql-commercial" title="Commercial Work"><img
+                    src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; object-fit:contain;" alt="">
+            </div>
+            <div class="quick-launch-btn" id="ql-passion" title="Passion Projects"><img
+                    src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; object-fit:contain;" alt="">
+            </div>
         </div>
         <div class="taskbar-divider"></div>
         <div class="taskbar-brand">Alayan Visuals</div>
@@ -262,10 +314,13 @@
         </div>
         <div class="system-tray">
             <div class="volume-control" id="volume-control">
-                <span class="tray-icon music-toggle" id="music-toggle" title="Toggle Music"><img id="audio-icon-img" src="assets/icons/Audio.png" style="width:1.2em; height:1.2em; object-fit:contain; transition: opacity 0.2s;" alt=""></span>
+                <span class="tray-icon music-toggle" id="music-toggle" title="Toggle Music"><img id="audio-icon-img"
+                        src="assets/icons/Audio.png"
+                        style="width:1.2em; height:1.2em; object-fit:contain; transition: opacity 0.2s;" alt=""></span>
                 <div class="volume-popup" id="volume-popup">
                     <div class="volume-popup-inner">
-                        <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="30" orient="vertical">
+                        <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="30"
+                            orient="vertical">
                         <span class="volume-label" id="volume-label">30</span>
                     </div>
                 </div>
@@ -281,4 +336,5 @@
 
     <script src="js/app.js"></script>
 </body>
+
 </html>

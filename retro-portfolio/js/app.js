@@ -9,39 +9,40 @@
     const portfolioData = {
         commercial: {
             motion_graphics: [
-                { id: 1, title: 'Burgerizz Explosion', video: '1PimOAjR4-kz9H3aF9uzhFo9FqWSTsisN', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎨 Brand%3C/text%3E%3C/svg%3E" },
-                { id: 2, title: 'Unleashed AOT', video: '1WmQrdrLzFISa7pKW0gl9sNMyKjH-94F2', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23000080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📦 Product%3C/text%3E%3C/svg%3E" },
-                { id: 3, title: 'Unleashed Porsche', video: '1f7GEwJjQ7VPZr4Xr_1ZkQw_tMpSN-DnU', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23000080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📦 Product%3C/text%3E%3C/svg%3E" },
-                { id: 4, title: 'Broode Outro', video: '1bvIhfdDcC23E15SACIO8v3LDXjyI0XOK', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📢 Promo%3C/text%3E%3C/svg%3E" },
-                { id: 5, title: 'Signetch Wrap', video: '15wPMncbwD4xLdsWUqqEmlY5-3C_cVSx4', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📢 Promo%3C/text%3E%3C/svg%3E" },
-                { id: 6, title: 'Solidarity Airplane', video: '19gJF_RDFBeSz2yzltGsRFgjDfZKdcMZZ', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📢 Promo%3C/text%3E%3C/svg%3E" },
-                { id: 7, title: 'Burgerizz X-O', video: '1vqsJd75H_lZbWyLhFS2t4oudxjCX1nkA', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📢 Promo%3C/text%3E%3C/svg%3E" },
-                { id: 8, title: 'Saudi Station', video: '1x6jXkWc_dVkVScxwY5vz0SRBO4SdvmAh', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📢 Promo%3C/text%3E%3C/svg%3E" }
+                { id: 1, title: 'Burgerizz Explosion', video: '1PimOAjR4-kz9H3aF9uzhFo9FqWSTsisN', thumbnail: 'https://drive.google.com/thumbnail?id=1PimOAjR4-kz9H3aF9uzhFo9FqWSTsisN&sz=w400-h225' },
+                { id: 2, title: 'Unleashed AOT', video: '1WmQrdrLzFISa7pKW0gl9sNMyKjH-94F2', thumbnail: 'https://drive.google.com/thumbnail?id=1WmQrdrLzFISa7pKW0gl9sNMyKjH-94F2&sz=w400-h225' },
+                { id: 3, title: 'Unleashed Porsche', video: '1f7GEwJjQ7VPZr4Xr_1ZkQw_tMpSN-DnU', thumbnail: 'https://drive.google.com/thumbnail?id=1f7GEwJjQ7VPZr4Xr_1ZkQw_tMpSN-DnU&sz=w400-h225' },
+                { id: 4, title: 'Broode Outro', video: '1bvIhfdDcC23E15SACIO8v3LDXjyI0XOK', thumbnail: 'https://drive.google.com/thumbnail?id=1bvIhfdDcC23E15SACIO8v3LDXjyI0XOK&sz=w400-h225' },
+                { id: 5, title: 'Signetch Wrap', video: '15wPMncbwD4xLdsWUqqEmlY5-3C_cVSx4', thumbnail: 'https://drive.google.com/thumbnail?id=15wPMncbwD4xLdsWUqqEmlY5-3C_cVSx4&sz=w400-h225' },
+                { id: 6, title: 'Solidarity Airplane', video: '19gJF_RDFBeSz2yzltGsRFgjDfZKdcMZZ', thumbnail: 'https://drive.google.com/thumbnail?id=19gJF_RDFBeSz2yzltGsRFgjDfZKdcMZZ&sz=w400-h225' },
+                { id: 7, title: 'Burgerizz X-O', video: '1vqsJd75H_lZbWyLhFS2t4oudxjCX1nkA', thumbnail: 'https://drive.google.com/thumbnail?id=1vqsJd75H_lZbWyLhFS2t4oudxjCX1nkA&sz=w400-h225' },
+                { id: 8, title: 'Saudi Station', video: '1x6jXkWc_dVkVScxwY5vz0SRBO4SdvmAh', thumbnail: 'https://drive.google.com/thumbnail?id=1x6jXkWc_dVkVScxwY5vz0SRBO4SdvmAh&sz=w400-h225' }
             ],
             reels: [
-                { id: 9, title: 'TH3ABEEN', video: '1MjN1eC8jyLKqKTvpHhNZwqvrlD6BgB-2', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎨 Brand%3C/text%3E%3C/svg%3E" },
-                { id: 10, title: 'PEARL CLINIC', video: '127mbArPw8m2b8QHVbeerj5c7kHJ7e_dR', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23000080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E📦 Product%3C/text%3E%3C/svg%3E" }
+                { id: 9, title: 'TH3ABEEN', video: '1MjN1eC8jyLKqKTvpHhNZwqvrlD6BgB-2', thumbnail: 'https://drive.google.com/thumbnail?id=1MjN1eC8jyLKqKTvpHhNZwqvrlD6BgB-2&sz=w400-h225' },
+                { id: 10, title: 'PEARL CLINIC', video: '127mbArPw8m2b8QHVbeerj5c7kHJ7e_dR', thumbnail: 'https://drive.google.com/thumbnail?id=127mbArPw8m2b8QHVbeerj5c7kHJ7e_dR&sz=w400-h225' }
             ]
         },
         passion: {
             motion_graphics: [
-                { id: 11, title: '2025 Showreeel', video: '16mcL3GFYQT9CBO4GILre_vOIRfv7hfHV', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E✨ Abstract%3C/text%3E%3C/svg%3E" },
-                { id: 12, title: 'Youmein Ou Leila', video: '1Dg45w7wy82SB-RweRLsjKmuZj2nVIMeR', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23000080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎵 Music%3C/text%3E%3C/svg%3E" },
-                { id: 13, title: 'Al-Quds Visual', video: '1-QcLxYmv4rsC8J6gGgc-Zjqy5t_KoDYX', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎬 Loop%3C/text%3E%3C/svg%3E" },
-                { id: 14, title: '03', video: '1nYMcheV4gIuujXVvjVC_bxI_NpQGTWqN', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎬 Loop%3C/text%3E%3C/svg%3E" },
-                { id: 15, title: 'Batman Monolouge', video: '15QTVzvMa0IolOdLGboTZqpEgwl4XXx5d', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎬 Loop%3C/text%3E%3C/svg%3E" },
-                { id: 16, title: 'Falling Visual', video: '10KPW8bL_xoOJOc2UBvVTyYQO1xcKj7va', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎬 Loop%3C/text%3E%3C/svg%3E" }
+                { id: 11, title: '2025 Showreeel', video: '16mcL3GFYQT9CBO4GILre_vOIRfv7hfHV', thumbnail: 'https://drive.google.com/thumbnail?id=16mcL3GFYQT9CBO4GILre_vOIRfv7hfHV&sz=w400-h225' },
+                { id: 12, title: 'Youmein Ou Leila', video: '1Dg45w7wy82SB-RweRLsjKmuZj2nVIMeR', thumbnail: 'https://drive.google.com/thumbnail?id=1Dg45w7wy82SB-RweRLsjKmuZj2nVIMeR&sz=w400-h225' },
+                { id: 13, title: 'Al-Quds Visual', video: '1-QcLxYmv4rsC8J6gGgc-Zjqy5t_KoDYX', thumbnail: 'https://drive.google.com/thumbnail?id=1-QcLxYmv4rsC8J6gGgc-Zjqy5t_KoDYX&sz=w400-h225' },
+                { id: 14, title: '03', video: '1nYMcheV4gIuujXVvjVC_bxI_NpQGTWqN', thumbnail: 'https://drive.google.com/thumbnail?id=1nYMcheV4gIuujXVvjVC_bxI_NpQGTWqN&sz=w400-h225' },
+                { id: 15, title: 'Batman Monolouge', video: '15QTVzvMa0IolOdLGboTZqpEgwl4XXx5d', thumbnail: 'https://drive.google.com/thumbnail?id=15QTVzvMa0IolOdLGboTZqpEgwl4XXx5d&sz=w400-h225' },
+                { id: 16, title: 'Falling Visual', video: '10KPW8bL_xoOJOc2UBvVTyYQO1xcKj7va', thumbnail: 'https://drive.google.com/thumbnail?id=10KPW8bL_xoOJOc2UBvVTyYQO1xcKj7va&sz=w400-h225' }
             ],
             reels: [
-                { id: 17, title: 'Daye3', video: '1eYghGKJ9OC_7tVHJZkvaXRlbeJfc3TUu', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎬 Loop%3C/text%3E%3C/svg%3E" },
-                { id: 18, title: 'Gang Edit', video: '1PiijvcA-0R4RE2XbGLFr0tKrsFoH8Fdt', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23000080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎥 Film%3C/text%3E%3C/svg%3E" },
-                { id: 19, title: 'ABDO X ALAYAN', video: '1qm8PodOzYxUePyZYBfkg3MsGEHKruq-o', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E✨ Abstract%3C/text%3E%3C/svg%3E" },
-                { id: 20, title: 'Franchise (Alayan X Ahmad Mansour)', video: '1Lswg2skoDPmJUy9cqpBJOnoU3ijM7Pw5', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23000080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎵 Music%3C/text%3E%3C/svg%3E" },
-                { id: 21, title: 'Yasser AL-Huzaimy', video: '1rYc4Ojx0-M3JSOZ8qbGdvgJ9XPrSMQCu', thumbnail: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Crect fill='%23008080' width='200' height='120'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' dominant-baseline='middle'%3E🎬 Loop%3C/text%3E%3C/svg%3E" }
+                { id: 17, title: 'Daye3', video: '1eYghGKJ9OC_7tVHJZkvaXRlbeJfc3TUu', thumbnail: 'https://drive.google.com/thumbnail?id=1eYghGKJ9OC_7tVHJZkvaXRlbeJfc3TUu&sz=w400-h225' },
+                { id: 18, title: 'Gang Edit', video: '1PiijvcA-0R4RE2XbGLFr0tKrsFoH8Fdt', thumbnail: 'https://drive.google.com/thumbnail?id=1PiijvcA-0R4RE2XbGLFr0tKrsFoH8Fdt&sz=w400-h225' },
+                { id: 19, title: 'ABDO X ALAYAN', video: '1qm8PodOzYxUePyZYBfkg3MsGEHKruq-o', thumbnail: 'https://drive.google.com/thumbnail?id=1qm8PodOzYxUePyZYBfkg3MsGEHKruq-o&sz=w400-h225' },
+                { id: 20, title: 'Franchise (Alayan X Ahmad Mansour)', video: '1Lswg2skoDPmJUy9cqpBJOnoU3ijM7Pw5', thumbnail: 'https://drive.google.com/thumbnail?id=1Lswg2skoDPmJUy9cqpBJOnoU3ijM7Pw5&sz=w400-h225' },
+                { id: 21, title: 'Yasser AL-Huzaimy', video: '1rYc4Ojx0-M3JSOZ8qbGdvgJ9XPrSMQCu', thumbnail: 'https://drive.google.com/thumbnail?id=1rYc4Ojx0-M3JSOZ8qbGdvgJ9XPrSMQCu&sz=w400-h225' }
             ],
 
         }
     };
+
 
     // --- State ---
     let windowZIndex = 10;
@@ -201,7 +202,8 @@
             { id: 'showreel', icon: '📺', title: 'Showreel' },
             { id: 'about', icon: '<img src="assets/icons/About me.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt="">', title: 'About Me' },
             { id: 'commercial', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Commercial Work' },
-            { id: 'passion', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Passion Projects' }
+            { id: 'passion', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Passion Projects' },
+            { id: 'resume', icon: '<img src="assets/icons/pdf-icon.svg" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Resume' }
         ];
 
         windowConfigs.forEach(cfg => {
@@ -468,6 +470,7 @@
         document.getElementById('icon-about').addEventListener('click', function () { openWindow('about'); });
         document.getElementById('icon-commercial').addEventListener('click', function () { openWindow('commercial'); });
         document.getElementById('icon-passion').addEventListener('click', function () { openWindow('passion'); });
+        document.getElementById('icon-resume').addEventListener('click', function () { openWindow('resume'); });
     }
 
     // --- Sliding About-Me Panel ---
