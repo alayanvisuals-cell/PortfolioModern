@@ -527,16 +527,16 @@
         var loader = document.getElementById('loader');
         var loaderVideo = document.getElementById('loader-video');
         if (loader && loaderVideo) {
-            var hideLoader = function() {
+            var hideLoader = function () {
                 loader.classList.add('hidden');
-                setTimeout(function() { loader.style.display = 'none'; }, 500);
+                setTimeout(function () { loader.style.display = 'none'; }, 500);
             };
             loaderVideo.addEventListener('ended', hideLoader);
             loaderVideo.addEventListener('error', hideLoader);
-            
+
             var playPromise = loaderVideo.play();
             if (playPromise !== undefined) {
-                playPromise.catch(function() {
+                playPromise.catch(function () {
                     hideLoader();
                 });
             }
@@ -626,10 +626,10 @@
                 themeToggle.innerHTML = '🌞';
             }
 
-            themeToggle.addEventListener('click', function() {
+            themeToggle.addEventListener('click', function () {
                 document.body.classList.toggle('dark-mode');
                 var isDark = document.body.classList.contains('dark-mode');
-                
+
                 if (isDark) {
                     localStorage.setItem('theme', 'dark');
                     themeToggle.innerHTML = '🌙';
@@ -701,7 +701,7 @@
             audio.play().then(function () {
                 bgMusicPlaying = true;
                 updateMusicIcon(true);
-            }).catch(function () {});
+            }).catch(function () { });
         }
     };
 

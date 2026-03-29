@@ -42,23 +42,37 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: fixed;
+    overscroll-behavior: none;
 }
 
 body {
     background-color: var(--win-bg);
-    background-image: url('../assets/icons/Windows%20light%202%2016x9.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     font-family: var(--win-font);
     font-size: 16px;
     color: var(--win-black);
     user-select: none;
 }
 
-body.dark-mode {
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/icons/Windows%20light%202%2016x9.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body.dark-mode::before {
     background-image: url('../assets/icons/Windows%20Night%2016x9.png');
+}
+
+body.dark-mode {
     --win-bg: #1a1a1a;
     --win-silver: #2a2a2a;
     --win-dark-silver: #1a1a1a;
