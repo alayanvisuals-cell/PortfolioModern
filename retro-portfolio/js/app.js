@@ -202,8 +202,7 @@
             { id: 'showreel', icon: '📺', title: 'Showreel' },
             { id: 'about', icon: '<img src="assets/icons/About me.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain; transform: scale(1.5);" alt="">', title: 'About Me' },
             { id: 'commercial', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Commercial Work' },
-            { id: 'passion', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Passion Projects' },
-            { id: 'resume', icon: '<img src="assets/icons/pdf-icon.svg" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Resume' }
+            { id: 'passion', icon: '<img src="assets/icons/folder icon.png" style="width:1.2em; height:1.2em; vertical-align:-0.15em; object-fit:contain;" alt="">', title: 'Passion Projects' }
         ];
 
         windowConfigs.forEach(cfg => {
@@ -470,7 +469,6 @@
         document.getElementById('icon-about').addEventListener('click', function () { openWindow('about'); });
         document.getElementById('icon-commercial').addEventListener('click', function () { openWindow('commercial'); });
         document.getElementById('icon-passion').addEventListener('click', function () { openWindow('passion'); });
-        document.getElementById('icon-resume').addEventListener('click', function () { openWindow('resume'); });
     }
 
     // --- Sliding About-Me Panel ---
