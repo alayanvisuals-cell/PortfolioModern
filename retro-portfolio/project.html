@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details — Moayad Alayan</title>
+    <meta name="description" content="Project case study by Moayad Alayan.">
+    <!-- Google Fonts: Inter and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Moayad Alayan.</a>
+            <div class="nav-links">
+                <a href="index.html#work" class="nav-link">Work</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span class="menu-toggle-line"></span>
+                <span class="menu-toggle-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Panel -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-links">
+            <a href="index.html#work" class="mobile-nav-link">Work</a>
+            <a href="index.html#about" class="mobile-nav-link">About</a>
+            <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
+
+    <main class="project-page">
+        <!-- Will be populated by JS -->
+        <div id="project-content">
+            <div class="container project-loading">
+                <p>Loading project...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; <span id="year"></span> Moayad Alayan. All rights reserved.</p>
+            <a href="#" class="back-to-top">Back to top ↑</a>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>
