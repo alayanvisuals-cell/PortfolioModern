@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     const projectContent = document.getElementById('project-content');
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    
+    // --- Dark Mode ---
+    // Apply saved preference immediately
+    if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
     
     // Get project ID from URL
     const urlParams = new URLSearchParams(window.location.search);
