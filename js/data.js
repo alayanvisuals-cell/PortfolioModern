@@ -13,6 +13,18 @@ const portfolioData = [
         process: 'Passion project i made the improve my Modern Style motion graphics'
     },
     {
+        id: 23,
+        title: 'Replit',
+        video: '1FYCYXhhoEJsuNENR1QRxxSYqkAN-5m3v',
+        thumbnail: 'assets/thumbnails/Replit Thumb.mp4',
+        category: 'Motion Graphics',
+        tags: ['motion_graphics'],
+        year: '2026',
+        role: 'Motion Designer',
+        description: 'A motion graphics project created for Replit.',
+        process: 'A dynamic motion design piece crafted to capture the energy and innovation of the Replit brand, blending sleek typography with fluid animation.'
+    },
+    {
         id: 11,
         title: '2025 Showreel',
         video: '16mcL3GFYQT9CBO4GILre_vOIRfv7hfHV',
