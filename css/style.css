@@ -9,6 +9,8 @@
     --text-secondary: #666666;
     --border-color: #E5E5E5;
     --accent: #000000;
+    --about-bg: #F2F2F2;
+    --card-bg: #EAEAEA;
     
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
     --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -17,6 +19,22 @@
     --nav-height: 80px;
     
     --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Dark Mode Variables --- */
+[data-theme="dark"] {
+    --bg-color: #0A0A0A;
+    --text-primary: #F0F0F0;
+    --text-secondary: #888888;
+    --border-color: #2A2A2A;
+    --accent: #F0F0F0;
+    --about-bg: #111111;
+    --card-bg: #1A1A1A;
+}
+
+/* Smooth color transitions when toggling dark mode */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* --- Reset --- */
@@ -90,7 +108,11 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-backdrop-filter: blur(12px);
     z-index: 100;
     border-bottom: 1px solid transparent;
-    transition: border-color var(--transition);
+    transition: border-color var(--transition), background-color 0.4s ease;
+}
+
+[data-theme="dark"] .nav {
+    background-color: rgba(10, 10, 10, 0.85);
 }
 
 .nav.scrolled {
@@ -141,6 +163,48 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* --- Dark Mode Toggle Button --- */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    transform: rotate(15deg);
+}
+
+.dark-mode-toggle .icon-sun {
+    display: none;
+}
+
+.dark-mode-toggle .icon-moon {
+    display: block;
+}
+
+[data-theme="dark"] .dark-mode-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .dark-mode-toggle .icon-moon {
+    display: none;
 }
 
 .menu-toggle {
@@ -325,8 +389,9 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
     position: relative;
     overflow: hidden;
-    background-color: #EAEAEA;
+    background-color: var(--card-bg);
     margin-bottom: 1.25rem;
+    transition: background-color 0.4s ease;
 }
 
 .project-image {
@@ -379,7 +444,8 @@ h1, h2, h3, h4, h5, h6 {
 /* --- About Section --- */
 .about {
     padding: 6rem 0;
-    background-color: #F2F2F2;
+    background-color: var(--about-bg);
+    transition: background-color 0.4s ease;
 }
 
 .about-grid {
