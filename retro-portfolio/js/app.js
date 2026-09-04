@@ -41,13 +41,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         filteredData.forEach((item, index) => {
-            const isFeatured = index % 3 === 0; // Every 3rd item is featured (larger) on desktop
-            
+            const isFeatured = index % 3 === 0;
+
             const card = document.createElement('div');
             card.className = `project-card ${isFeatured ? 'featured' : ''}`;
             card.innerHTML = `
                 <div class="project-image-container">
-                    <video src="${item.thumbnail}" class="project-image" autoplay loop muted playsinline></video>
+                    <video
+                        src="${item.poster}"
+                        class="project-image project-poster"
+                        autoplay loop muted playsinline
+                        preload="auto"
+                    ></video>
+                    <video
+                        src="${item.thumbnail}"
+                        class="project-image project-video"
+                        loop muted playsinline
+                        preload="none"
+                    ></video>
                 </div>
                 <div class="project-info">
                     <div>
@@ -57,10 +68,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="project-view-indicator">View Project →</span>
                 </div>
             `;
-            
+
+            // Hover: fade in full-quality video, fade out poster
+            const video = card.querySelector('.project-video');
+            const posterVideo = card.querySelector('.project-poster');
+
+            card.addEventListener('mouseenter', () => {
+                video.play();
+                video.style.opacity = '1';
+                posterVideo.style.opacity = '0';
+            });
+
+            card.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+                video.style.opacity = '0';
+                posterVideo.style.opacity = '1';
+            });
+
             card.addEventListener('click', () => {
                 window.location.href = `project.html?id=${item.id}`;
             });
+
             grid.appendChild(card);
         });
     }
