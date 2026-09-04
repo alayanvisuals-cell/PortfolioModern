@@ -98,5 +98,17 @@ const portfolioData = [
         description: 'High-energy fashion/lifestyle edit.',
         process: 'A project defined by its rhythm. I utilized a combination of split-screens, glitch transitions, and film burns to give the digital footage a raw, tactile quality.'
     },
+    {
+        id: 24,
+        title: 'IKEA',
+        video: '1eHsQAPQnvIb0TnJaJKMt-Yt6ELPVjM2L',
+        thumbnail: 'assets/thumbnails/Ikea Thumb.mp4',
+        category: 'Motion Graphics',
+        tags: ['motion_graphics'],
+        year: '2026',
+        role: 'Motion Designer',
+        description: 'A motion graphics project created for IKEA.',
+        process: 'A sleek and modern motion design piece crafted to capture the spirit of the IKEA brand, blending clean typography with fluid animation.'
+    },
 
 ];
